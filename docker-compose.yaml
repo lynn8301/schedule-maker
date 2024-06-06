@@ -1,0 +1,16 @@
+version: '1.0'
+services:
+  app:
+    build: .
+    ports:
+      - "8081:8080"
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+      MYSQL_ROOT_PASSWORD: 1234567
+      MYSQL_DATABASE: schdeule-maker
+    ports:
+      - 3307:3306
