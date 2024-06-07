@@ -14,8 +14,9 @@ func userLogin(c *gin.Context) {
 }
 
 func UserRouters(router *gin.Engine) {
+	service := gin.Default()
 	userRouter := router.Group("/users")
 	{
-		userRouter.GET("/login", userLogin)
+		userRouter.GET("/login", Uservices.Login)
 	}
 }
