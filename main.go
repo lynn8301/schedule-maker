@@ -1,13 +1,14 @@
 package main
 
 import (
-	"fmt"
+	routers "schedule-maker/route"
+
 	"github.com/gin-gonic/gin"
-	"user"
 )
 
 func main() {
 	router := gin.Default()
-	user.User(router)
-	router.run(":8080")
+	routers.UserRouters(router)
+	routers.ScheduleRouters(router)
+	router.Run(":8081")
 }
