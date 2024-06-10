@@ -1,22 +1,16 @@
 package routers
 
 import (
-	"net/http"
-
 	"github.com/gin-gonic/gin"
+	"schedule-maker/controller"
 )
 
-func userLogin(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{
-		"status": "OK",
-		"msg":    "FROM userLogin",
-	})
-}
-
-func UserRouters(router *gin.Engine) {
-	service := gin.Default()
+func UserRouters() *gin.Engine {
+	router := gin.Default()
 	userRouter := router.Group("/users")
 	{
-		userRouter.GET("/login", Uservices.Login)
+		userRouter.POST("/", controller.createUser)
 	}
+
+	return router
 }
