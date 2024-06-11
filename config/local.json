@@ -1,0 +1,9 @@
+{
+    "mysql": {
+        "url": "127.0.0.1",
+        "username": "root",
+        "passowrd": "",
+        "dbName": "schedule-maker",
+        "port": 3306
+    }
+}

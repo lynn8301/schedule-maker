@@ -1,16 +1,17 @@
 version: '1.0'
 services:
-  app:
-    build: .
+  schdeule_maker:
+    container_name: schdeule_maker
+    build: 
+      dockerfile: Dockerfile
     ports:
-      - "8081:8080"
+      - 8090:8080
   db:
-    image: mysql:8.0
+    image: mysql:5.7.37
     restart: always
     environment:
-      MYSQL_USER: user
-      MYSQL_PASSWORD: user
-      MYSQL_ROOT_PASSWORD: 1234567
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 
       MYSQL_DATABASE: schdeule-maker
     ports:
-      - 3307:3306
+      - 3330:3306
